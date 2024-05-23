@@ -1,29 +1,87 @@
+@font-face {
+    font-family: balatro;
+    src: url(fonts/balatro.ttf);
+}
 body {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;
-    background-image: url("images/table.png");
-    background-size: cover;
+    font-family: 'balatro','Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;
     font-weight: bold;
     color: white;
     text-align: center;
+    justify-content: center;
+    /*background-color: #43674f;
+    background-blend-mode: multiply, luminosity;*/
+    background: #2b4242;
+    background-size: cover;
+    color: white;
+    letter-spacing: 1px;
 }
-
-h1 {
-    color: goldenrod;
+.gameboard{
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100%;
+    background-size: cover; 
+    background: hotpink;*/
 }
-
+#overlay {
+    position: fixed; 
+    width: 100%; 
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(to top, #00090100, #00090100, #57575743, #57575743);
+    background-size: cover;
+    background-size: 100% 1px;
+    z-index: 2; 
+    pointer-events: none;
+  }
 #message-el {
     font-style: italic;
 }
 
 button {
-    color: #016f32;
+    font-family: 'balatro','Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;
+    color: white;
+    font-size: 20px;
     width: 150px;
+    height:75px;
     background: goldenrod;
     padding-top: 5px;
     padding-bottom: 5px;
     font-weight: bold;
     border: none;
-    border-radius: 2px;
-    margin-bottom: 2px;
-    margin-top: 2px;
+    border-radius: 5px;
+    margin:5px;
+    box-shadow: 0px 3px 0px rgb(11, 11, 11);
+    letter-spacing: 1px;
 }
+.button-row{
+    border-radius: 10px;
+    background-color: #242f32;
+    padding:10px;
+    box-shadow: 0px 5px 0px rgb(33, 33, 33);
+    display: flex;
+    flex-direction: row;
+}
+#play-btn{
+    background: #3A85E9;
+}
+#card-btn{
+    background: #58997E
+}
+@media screen{
+    #overlay {
+      animation: scanlines infinite 7.5s linear ;
+    }
+  } 
+  @keyframes scanlines {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: 0 -10px;
+    }
+  }

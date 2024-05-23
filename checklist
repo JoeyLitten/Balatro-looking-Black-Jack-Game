@@ -1,0 +1,8 @@
+- Show cards instead of just numbers 
+- start game button only shows in the beginning and disapears when game has started
+-center UI and change background image.
+-new game button when player busts or wins
+-create dealer (which means making it so one card is played face down then flipped)
+-dont show sum but keep track 
+-hit and stay buttons
+-aces high or low
