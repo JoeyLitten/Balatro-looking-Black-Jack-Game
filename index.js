@@ -2,6 +2,7 @@ let player = {
     name: "Per",
     chips: 200
 }
+let flavorTextArr = ["Voucher me.", "Now with Raytracing!", "Stop staring at me.", "I'm THE Scarab Lord!", "This is Argentina.... nice.", "Jobs Done!", "I am eternal (a turtle)!",""]
 let deck = ["A",1,2,3,4,5,6,7,8,9,10,"J","Q","K"]
 let cards = []
 let hand = []
@@ -14,9 +15,11 @@ let sumEl = document.getElementById("sum-el")
 let cardsEl = document.getElementById("cards-el")
 let playerEl = document.getElementById("player-el")
 let playBtn = document.getElementById("play-btn")
+let flavorText = document.getElementById("flavor-text")
 
 playerEl.textContent = player.name + ": $" + player.chips
 playBtn.textContent = "START GAME"
+renderFlavorText()
 
 /* function getRandomCard() {
     let randomNumber = Math.floor( Math.random()*13 ) + 1
@@ -38,6 +41,12 @@ function getRandomCardFromDeck(){
 }else{
     return deck[random]
 }   
+}
+
+function renderFlavorText(){
+    let random = Math.floor(Math.random() * flavorTextArr.length)
+    flavorText.textContent = flavorTextArr[random]
+    console.log(flavorTextArr[random])
 }
 
 /* function turnFacesToNumbers(){
