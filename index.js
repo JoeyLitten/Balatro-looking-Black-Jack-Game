@@ -2,7 +2,10 @@ let player = {
     name: "Per",
     chips: 200
 }
-let flavorTextArr = ["Voucher me.", "Now with Raytracing!", "Stop staring at me.", "I'm THE Scarab Lord!", "This is Argentina.... nice.", "Jobs Done!", "I am eternal (a turtle)!",""]
+let flavorTextArr = ["Voucher me.", "Now with Raytracing!", "Stop staring at me.", "I'm THE Scarab Lord!", "This is Argentina.... nice.", "Jobs Done!", "I am eternal (a turtle)!","Made in West Park","You're now listening to 105.5 The Goo", "The plan is simple!",
+    "For Lieutenent Dan", "Thats about it... see ya.", "As soon as he tries to back boost me, the double", "James...... earn this.", "Something need doing?","I'm using tilt controls!", "I WAS HERE", "Why did you break it?", "Yes, it's literally just black jack",
+     "For Frodo", "Oh my god, he just ran in", "Stick to the plan, chums", "For democracy!", "Give orange me give eat orange me eat orange give me eat orange give me you.","Where's Illidan?!", "For Dimo", "Bonk em up", "Don't make a sound"
+]
 let deck = ["A",1,2,3,4,5,6,7,8,9,10,"J","Q","K"]
 let cards = []
 let hand = []
@@ -17,7 +20,9 @@ let playerEl = document.getElementById("player-el")
 let playBtn = document.getElementById("play-btn")
 let flavorText = document.getElementById("flavor-text")
 
-playerEl.textContent = player.name + ": $" + player.chips
+
+
+//playerEl.textContent = player.name + ": $" + player.chips
 playBtn.textContent = "START GAME"
 renderFlavorText()
 
@@ -46,7 +51,6 @@ function getRandomCardFromDeck(){
 function renderFlavorText(){
     let random = Math.floor(Math.random() * flavorTextArr.length)
     flavorText.textContent = flavorTextArr[random]
-    console.log(flavorTextArr[random])
 }
 
 /* function turnFacesToNumbers(){
@@ -67,7 +71,8 @@ function startGame() {
     let secondCard = getRandomCardFromDeck()
     cards = [firstCard, secondCard]   
     sum = firstCard + secondCard
-    renderGame()
+    //renderGame()
+    moveAfterStartButton()
     //dispellPlayButton()
 }
 
@@ -109,3 +114,11 @@ function newCard() {
 function dispellPlayButton(){
     document.getElementById("play-btn").style.display = "none"
 } */
+
+
+function moveAfterStartButton(){
+    //document.getElementById("move-up").style.transform = 'translate(0, -200px);'
+    document.getElementById('move-up').classList.add('up');
+    document.getElementById('move-down').classList.add('down');
+    console.log("it worked")
+}

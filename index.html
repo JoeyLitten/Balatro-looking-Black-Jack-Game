@@ -4,20 +4,38 @@
     </head>
     <body>
         <div id="overlay"></div>
-        <div class="gameboard">
-            <h1>Blackjack</h1>
-            <div class="flavor-text-wrapper">
-            <h2 id="flavor-text"></h2>
+        <div class="start-screen">
+            <div id="move-up">
+                <h1>Blackjack</h1>
+                <div class="flavor-text-wrapper">
+                    <h2 id="flavor-text"></h2>
+                </div>
             </div>
-            <p id="message-el">Want to play a round?</p>
-            <p id="cards-el">Cards:</p>
-            <p id="sum-el">Sum:</p>
-            <div class="button-row">
-            <button id="play-btn" onclick="startGame()"></button>
-            <button id="card-btn" onclick="newCard()">NEW CARD</button>
+            <div id="move-down">
+                <p id="message-el">Want to play a round?</p>
+                <div class="button-row">
+                    <button id="play-btn" onclick="startGame()"></button>
+                    <button id="card-btn" onclick="renderFlavorText()">SETTINGS</button>
+                </div>
             </div>
-         <p id="player-el"></p>
             <script src="index.js"></script>
+        </div>
+        <div id="game-board">
+            <div id="opponent-row-wrapper">
+                <div class="opponent-row">
+
+                </div>
+            </div>
+            <div id="player-row-wrapper">
+                <div id="player-row">
+
+                </div>
+            </div>
+            <div id="game-btn-row">
+                <button id="hit-btn" onclick="newCard()"></button>
+                <div id="info-box"></div>
+                <button id="stand-btn"></button>
+            </div>
         </div>
     </body>
 </html>

@@ -7,6 +7,7 @@ h1{
     margin: 5px;
 }
 body {
+  overflow: hidden;
     display: flex;
     font-family: 'balatro','Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;
     font-weight: bold;
@@ -20,7 +21,7 @@ body {
     color: white;
     letter-spacing: 1px;
 }
-.gameboard{
+.start-screen{
     flex-direction: column;
     display: flex;
     justify-content: center;
@@ -28,6 +29,9 @@ body {
     /* height: 100%;
     background-size: cover; 
     background: hotpink;*/
+    animation: fadeInAnimation ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
 #overlay {
     position: fixed; 
@@ -53,7 +57,7 @@ body {
     
 }
 .flavor-text-wrapper{
-    transform: translate(160px, -30px) rotate(-25deg);
+    transform: translate(160px, -30px) rotate(-20deg);
 }
 
 button {
@@ -95,6 +99,21 @@ button:active{
 #card-btn{
     background: #58997E
 }
+#game-board{
+  display:none;
+}
+
+#move-down.down{
+  transition: .75s;
+  transform: translate(0, 600px);
+  opacity:0;
+}
+#move-up.up{
+  transition: .75s;
+  transform: translate(0, -600px);
+  opacity:0;
+}
+
 @media screen{
     #overlay {
       animation: scanlines infinite 7.5s linear ;
@@ -129,3 +148,12 @@ button:active{
       transform: scale(0.9);
     }
   }
+
+  @keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
