@@ -1,3 +1,31 @@
+let crtBar = '#crt-bar'
+
+function crtStartUp(){
+    document.addEventListener("DOMContentLoaded", () => {
+    let timeline = gsap.timeline({})
+    timeline.to(crtBar, .2,{
+        width: '100vw',
+        height: '2px',
+        background: '#ffffff'
+    })
+    timeline.to(crtBar, .2,{
+        width: '100vw',
+        height: '100vh',
+        background: '#ffffff',
+        ease: Power2.easeOut 
+    })
+    timeline.to(crtBar, 0,{
+        display: 'none'
+        
+    })
+    document.getElementById("overlay").classList.add("transparent");
+    });
+}
+
+
+
+//************** Beginning of Black Jack Game***************************
+
 let player = {
     name: "Per",
     chips: 200
@@ -19,13 +47,18 @@ let cardsEl = document.getElementById("cards-el")
 let playerEl = document.getElementById("player-el")
 let playBtn = document.getElementById("play-btn")
 let flavorText = document.getElementById("flavor-text")
+const animated = document.getElementById("crt-bar")
 
 
 
 //playerEl.textContent = player.name + ": $" + player.chips
 playBtn.textContent = "START GAME"
 renderFlavorText()
-
+crtStartUp()
+animated.addEventListener('animationend', () => {
+    console.log('Animation ended');
+    document.getElementById("overlay").classList.add("transparent");
+  });
 /* function getRandomCard() {
     let randomNumber = Math.floor( Math.random()*13 ) + 1
     if (randomNumber > 10) {
