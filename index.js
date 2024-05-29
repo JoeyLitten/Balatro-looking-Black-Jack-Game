@@ -150,8 +150,14 @@ function dispellPlayButton(){
 
 
 function moveAfterStartButton(){
-    //document.getElementById("move-up").style.transform = 'translate(0, -200px);'
     document.getElementById('move-up').classList.add('up');
     document.getElementById('move-down').classList.add('down');
+    const startGameAnimation = document.querySelector(".up");
+    startGameAnimation.onanimationend = () => {
+        console.log('staring game');
+        document.getElementById("game-board").classList.add("display-flex");
+      };
     console.log("it worked")
+    document.getElementById("game-board").style.display = "flex";
+    document.getElementById("start-screen").style.display = "none !important"
 }

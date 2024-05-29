@@ -5,7 +5,7 @@
     <body>
         <section id="crt-bar"></section>
         <div id="overlay"></div>
-        <div class="start-screen">
+        <div class="start-screen" id="start-screen">
             <div id="move-up">
                 <h1>Blackjack</h1>
                 <div class="flavor-text-wrapper">
@@ -27,15 +27,18 @@
 
                 </div>
             </div>
+            <div id="empty-row">
+
+            </div>
             <div id="player-row-wrapper">
                 <div id="player-row">
 
                 </div>
             </div>
             <div id="game-btn-row">
-                <button id="hit-btn" onclick="newCard()"></button>
+                <button id="hit-btn" onclick="newCard()">Hit</button>
                 <div id="info-box"></div>
-                <button id="stand-btn"></button>
+                <button id="stand-btn">Stand</button>
             </div>
         </div>
         <script src="index.js"></script>

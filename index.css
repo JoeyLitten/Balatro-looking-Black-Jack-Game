@@ -123,7 +123,58 @@ button:active{
     background: #58997E
 }
 #game-board{
+  
+  color: hotpink;
   display:none;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width:100%;
+  height:100%;
+  margin: 0;
+}
+#game-board.display-flex{
+  display: flex !important;
+}
+#opponent-row-wrapper{
+  display: flex;
+  flex-direction: row;
+  width:800px;
+  max-width: 800px;
+  height: 200px;
+  background-color: #242f3293;
+  padding: 10px;
+  border-radius: 10px;
+}
+#player-row-wrapper{
+  display: flex;
+  flex-direction: row;
+  width:800px;
+  max-width: 800px;
+  height: 200px;
+  background-color: #242f3293;
+  padding: 10px;
+  border-radius: 10px;
+}
+#game-btn-row{
+  display: flex;
+  flex-direction: row;
+}
+#hit-btn{
+  background: #3A85E9;
+}
+#stand-btn{
+  background: #F54A3F;
+}
+#info-box{
+  margin-left: 10px;
+  margin-right: 10PX;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  border-radius: 10px;
+  width: 100px;
+  border: 4px solid rgb(229, 229, 229);
+  box-shadow: 0px 3px 0px rgb(11, 11, 11);
 }
 
 #move-down.down{
@@ -136,6 +187,9 @@ button:active{
   transform: translate(0, -600px);
   opacity:0;
 }
+
+
+
 
 @media screen{
     #overlay {
