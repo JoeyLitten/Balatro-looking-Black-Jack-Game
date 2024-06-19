@@ -48,6 +48,8 @@ let playerEl = document.getElementById("player-el")
 let playBtn = document.getElementById("play-btn")
 let flavorText = document.getElementById("flavor-text")
 const animated = document.getElementById("crt-bar")
+const startScreen = document.getElementById("start-screen")
+const gameBoard = document.getElementById("game-board")
 
 
 
@@ -152,12 +154,26 @@ function dispellPlayButton(){
 function moveAfterStartButton(){
     document.getElementById('move-up').classList.add('up');
     document.getElementById('move-down').classList.add('down');
-    const startGameAnimation = document.querySelector(".up");
-    startGameAnimation.onanimationend = () => {
-        console.log('staring game');
-        document.getElementById("game-board").classList.add("display-flex");
-      };
-    console.log("it worked")
+    const startGameAnimation = document.getElementById("move-up");
+    startGameAnimation.addEventListener("animationend", removeStartScreen)
+    document.getElementById("start-screen").style.width = "0%"
+    setTimeout(flexGameBoard, 600)
+    setTimeout(makeRowsMove, 650)
+    //document.getElementById("start-screen").style.display = "none !important"
+    
+}
+
+function flexGameBoard(){
     document.getElementById("game-board").style.display = "flex";
-    document.getElementById("start-screen").style.display = "none !important"
+    
+}
+function makeRowsMove(){
+    document.getElementById("opponent-row-wrapper").classList.add("go-down")
+    document.getElementById("player-row-wrapper").classList.add("go-up")
+}
+
+function removeStartScreen(){
+    startScreen.remove()
+    gameBoard.classList.add("display-flex");
+    console.log("ayo it friggen worked")
 }
